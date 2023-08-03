@@ -74,7 +74,7 @@
 
 .Feature_Section
 {
-	max-width: 36%;
+	max-width: 40rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
 	padding-bottom: 2rem;
@@ -265,6 +265,7 @@
 	align-items: center;
 	justify-content: center;
 	max-width: 40rem;
+	min-width: 24rem;
 }
 
 .Input_Field
@@ -278,6 +279,7 @@
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	width: 100%;
+	margin-left: 1.25rem; /* This is a hack, it's just here to align the field visually with the dropdown */
 }
 
 .Footer
@@ -293,3 +295,226 @@
 	flex-direction: row;
 	gap: 2rem
 }
+
+/* Dropdown */
+
+.Dropdown_Menu_Container
+{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: calc(100% - 0.25rem);
+	padding-right: 1.25rem;
+	margin-left: 1.25rem;
+	border: 0.125rem solid #000000;
+	border-radius: 1rem;
+}
+
+.Dropdown_Menu_Controller
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	opacity: 0;
+	cursor: pointer;
+	z-index: 3;
+}
+
+.Dropdown_Menu_Controller:checked ~ .Dropdown_Menu_Options 
+{
+	border: 0.125rem solid #000000;
+	height: 8rem;
+	overflow-y: scroll;
+}
+
+.Dropdown_Menu_Controller:checked ~ .Dropdown_Menu_Options .Option_Label 
+{
+	display: block;
+	padding: 1rem 1rem;
+}
+
+.Dropdown_Menu_Controller:not(:checked) ~ .Dropdown_Menu_Options .Dropdown_Menu_Option input[type="radio"]:checked ~ .Option_Value 
+{
+	top: -1.6rem;
+}
+
+.Dropdown_Menu_Controller:checked ~ .Dropdown_Menu_Options .Dropdown_Menu_Option input[type="radio"]:checked ~ .Option_Value 
+{
+	display: none;
+}
+
+.Dropdown_Menu_Controller:checked ~ .Dropdown_Menu_Options .Option_Background
+{
+	display: block;
+}
+
+.Dropdown_Menu_Box
+{
+	position: relative;
+	padding-left: 1rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	cursor: pointer;
+	width: 100%;
+}
+
+.Dropdown_Menu_Selected_Value
+{
+	font-size: 1.5rem;
+}
+
+.Dropdown_Menu_Label
+{
+	color: #A9A9A9;
+}
+
+.Dropdown_Menu_Arrow_Icon 
+{
+	position: absolute;
+	background-color: #000000;
+	top: 1rem;
+	right: 1rem;
+	bottom: 1rem;
+	padding: 1rem;
+	clip-path: path('M23.0179 0.70911L15.2909 8.41928C14.3454 9.36476 12.8146 9.36476 11.8635 8.41928L4.13648 0.70911C3.191 -0.23637 1.65459 -0.23637 0.70911 0.70911C-0.23637 1.65459 -0.23637 3.191 0.70911 4.13648L11.8635 15.2909C12.809 16.2364 14.3454 16.2364 15.2909 15.2909L26.4453 4.13648C27.3908 3.191 27.3908 1.65459 26.4453 0.70911C25.4998 -0.23637 23.9634 -0.23637 23.0179 0.70911Z');
+}
+
+.Dropdown_Menu_Options
+{
+	position: absolute;
+	width: 100%;
+	border-radius: 1rem;
+	margin-top: 3.5rem;
+	background-color: #FBF4E6;
+}
+
+.Dropdown_Menu_Option 
+{
+	position: relative;
+	line-height: 1;
+	transition: 0.3s ease all;
+	z-index: 2;
+}
+
+.Dropdown_Menu_Option:hover
+{
+	background-color: #1F6265;
+}
+
+.Dropdown_Menu_Option:first-of-type:hover
+{
+	border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.Dropdown_Menu_Option:last-of-type:hover
+{
+	border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.Dropdown_Menu_Option, .Option_Label 
+{
+	color: #000000;
+	font-size: 1.5rem;
+}
+
+.Option_Label 
+{
+	display: none;
+	padding: 0;
+}
+
+.Selection_Controller 
+{
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 50%;
+}
+
+.Selection_Controller.Top_Half 
+{
+	top: 0;
+}
+
+.Selection_Controller.Bottom_Half
+{
+	bottom: 0;
+}
+
+input[type="radio"] 
+{
+	position: absolute;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	margin: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.Selection_Controller:hover 
+{
+	height: 100%;
+	z-index: 1;
+}
+
+.Option_Label 
+{
+	transition: 0.3s ease all;
+}
+
+.Option_Value 
+{
+	position: absolute;
+	left: 1rem;
+	height: 1.25rem;
+	transform: scale(0);
+}
+
+.Dropdown_Menu_Option input[type="radio"]:checked ~ .Option_Value 
+{
+	opacity: 1;
+	transform: scale(1);
+}
+
+.Dropdown_Menu_Option input[type="radio"]:checked ~ .Dropdown_Menu_Label 
+{
+	display: none;
+}
+
+.Dropdown_Menu_Option input[type="radio"]:checked ~ .Option_Label:before 
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.Option_Background
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 40px;
+	transition: 0.3s ease all;
+	z-index: 1;
+	display: none;
+}
+
+.Dropdown_Menu_Option:hover .Option_Label 
+{
+	color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* Dropdown */
