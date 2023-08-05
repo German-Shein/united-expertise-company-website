@@ -1,4 +1,4 @@
-const Text = 
+const International_Text = 
 {
 	Hero_Header_1: 
 	{
@@ -244,17 +244,24 @@ const Text =
 
 const Toggle_Language = () =>
 {
+	const Headers = [...document.getElementsByTagName ('h1'), ...document.getElementsByTagName ('h2'), ... document.getElementsByTagName ('h3'), ...document.getElementsByTagName ('h4'), ...document.getElementsByTagName ('h5'), ...document.getElementsByTagName ('h6')]
 	const Language = document.documentElement.getAttribute ("lang");
+	const Text = [...document.getElementsByTagName ('p'), ...document.getElementsByTagName ('span'), ... document.getElementsByTagName ('div'), ...document.getElementsByTagName ('input'), ...document.getElementsByTagName ('textarea'), ...document.getElementsByTagName ('label'), ...document.getElementsByTagName ('li')]
 	document.documentElement.setAttribute ("lang", Language === "en" ? "ar" : "en");
-	Object.keys (Text).forEach (ID => document.getElementById (ID).innerHTML = Text [ID] [Language === "en" ? "ar" : "en"]);
+	Object.keys (International_Text).forEach (ID => document.getElementById (ID).innerHTML = International_Text [ID] [Language === "en" ? "ar" : "en"]);
 	if (Language === 'en')
 	{
 		document.getElementsByClassName ("Arabic_Language") [0].setAttribute ('style', '');
 		document.getElementsByClassName ("English_Language") [0].setAttribute ('style', 'display: none;');
+		Headers.forEach (Header => Header.classList.add ('Arabic_Header'))
+		Text.forEach (Text_Element => Text_Element.classList.add ('Arabic_Text'))
+
 	}
 	else if (Language === 'ar')
 	{
 		document.getElementsByClassName ("Arabic_Language") [0].setAttribute ('style', 'display: none;');
 		document.getElementsByClassName ("English_Language") [0].setAttribute ('style', '');
+		Headers.forEach (Header => Header.classList.remove ('Arabic_Header'))
+		Text.forEach (Text_Element => Text_Element.classList.remove ('Arabic_Text'))
 	}
 }

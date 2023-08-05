@@ -456,3 +456,13 @@
 {
 	justify-content: flex-end;
 }
+
+.Arabic_Header
+{
+	font-family: 'Kufam', sans-serif;
+}
+
+.Arabic_Text
+{
+	font-family: 'Cairo', sans-serif;
+}
