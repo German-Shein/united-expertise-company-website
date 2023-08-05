@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
-<html>
-	<head lang="en">
+<html lang="en">
+	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>United Expertise Company | Environmental Consultancy Services</title>
@@ -10,19 +10,21 @@
 		<link rel="canonical" href="https://www.uec-env.sa">
 		<meta property="og:title" content="United Expertise Company | Environmental Consultancy Services">
 		<meta property="og:description" content="United Expertise Company (UEC) provides environmental consulting and studies services to assess environmental damages and offer economic solutions with a focus on environmental safety. Our highly qualified national (Saudi) team has over 30 years of experience.">
-		<meta property="og:image" content="https://www.uec-env.sa/assets/Logo.svg">
+		<meta property="og:image" content="https://www.uec-env.sa/assets/logo.svg">
 		<meta property="og:url" content="https://www.uec-env.sa">
 		<meta property="og:type" content="website">
 		<link rel="stylesheet" href="./Global.css">
 		<link rel="stylesheet" href="./Index.css">
 		<link rel="stylesheet" href="./Utility.css">
+		<script src="./Index.js"></script>
 	</head>
 	<body>
 		<main>
 			<div class="Full_Height_Section Hero_Section">
 				<div class="Hero_Content Padding_2rem Background_Color_1">
-					<div class="Language_Toggle_Switch">
-						<div class="Language_Toggle_Switch_Button Cover_Background"></div>
+					<div class="Language_Toggle_Switch" onclick="Toggle_Language ()">
+						<div class="Language_Toggle_Switch_Button English_Language Cover_Background"></div>
+						<div class="Language_Toggle_Switch_Button Arabic_Language Cover_Background" style="display: none;"></div>
 					</div>
 					<svg width="512" height="332" viewBox="0 0 512 332" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<g clip-path="url(#clip0_115_8)">
@@ -132,9 +134,9 @@
 							</clipPath>
 						</defs>
 					</svg>
-					<h1 class="Hero_Header">Your Top Saudi Partner in Environmental Safety</h1>
-					<h3 class="Hero_Header">Join us on a mission to build a cleaner world!</h3>
-					<button class="Standard_Button">Get a free quote</button>
+					<h1 class="Hero_Header" id="Hero_Header_1">Your Top Saudi Partner in Environmental Safety</h1>
+					<h3 class="Hero_Header" id="Hero_Header_2">Join us on a mission to build a cleaner world!</h3>
+					<button class="Standard_Button" id="Call_to_Action_1">Get a free quote</button>
 				</div>
 				<div class="Hero_Image Cover_Background"></div>
 			</div>
@@ -147,17 +149,17 @@
 							<path d="M44.7754 29.2169C44.7754 29.2169 54.9114 32.2465 54.7882 35.2349C54.7882 35.2349 48.9551 41.0064 45.4634 41.5815C45.4634 41.5815 37.7304 39.3119 27.2555 38.2234C27.2555 38.2234 38.5006 29.2272 41.6431 29.2272" fill="#A4C34E"/>
 							<path d="M0 55.9795L10.1977 64C10.1977 64 15.9076 59.5738 20.6316 59.5738C20.6316 59.5738 38.3466 60.7959 45.1656 60.5083C45.1656 60.5083 66.896 44.5289 73.2118 32.5443C73.2118 32.5443 72.0411 27.4917 62.8498 33.3556C53.6585 39.2195 46.4493 42.9987 46.4493 42.9987C46.4493 42.9987 46.7163 46.7471 45.3299 48.6983C45.3299 48.6983 36.9089 51.8306 30.5931 51.4198C24.2773 51.009 35.9846 48.5443 42.8139 47.9795C42.8139 47.9795 46.0488 48.5956 44.5597 43.2555C44.5597 43.2555 29.9256 40.2259 23.4044 40.5854C23.4044 40.5854 11.7484 43.0911 0.0102696 55.9795H0Z" fill="#A4C34E"/>
 						</svg>
-						<h2 class="Feature_Header">Environmental Consultancy and Studies</h2>
+						<h2 class="Feature_Header" id="Feature_Header_1">Environmental Consultancy and Studies</h2>
 					</div>
 					<div class="Features Text_Color_2">
-						<p class="Company_Description">United Expertise Company for Environmental Consultancy (UEC) provides environmental consulting and studies services to its valued clients to assess the environmental damages and provide the best economic solutions compatible with the principles of environmental safety by a highly qualified national (Saudi) team with more than 30 years of experience.</p>
-						<h1 class="Central_Text_Alignment">WE OFFER</h1>
+						<p class="Company_Description" id="Company_Description">United Expertise Company for Environmental Consultancy (UEC) provides environmental consulting and studies services to its valued clients to assess the environmental damages and provide the best economic solutions compatible with the principles of environmental safety by a highly qualified national (Saudi) team with more than 30 years of experience.</p>
+						<h1 class="Central_Text_Alignment" id="Offer_Header">WE OFFER</h1>
 						<div class="Service_Cards">
 							<div class="Service_Card Background_Color_2">
 								<svg width="41" height="64" viewBox="0 0 41 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M37.7854 32.5838L20.4749 0L3.12368 32.6616C2.89694 33.017 2.67696 33.3859 2.47052 33.7683C2.05764 34.523 1.71244 35.3149 1.71244 35.3149C1.71244 35.3149 1.25895 36.3505 0.920522 37.4335C0.321506 39.3591 0 41.4066 0 43.5251C0 54.8354 9.16461 64 20.4749 64C31.7851 64 40.9497 54.8354 40.9497 43.5251C40.9497 39.5012 39.7889 35.7481 37.7854 32.5838ZM18.4274 55.9319C18.4274 55.9319 13.307 46.016 9.70948 44.8146C9.70948 44.8146 16.5863 54.013 17.1481 57.3702C17.1481 57.3702 14.8163 58.1452 11.1275 55.8947C8.89387 54.5376 7.16112 52.3581 6.78885 49.7725C6.74147 49.4612 6.72117 49.1803 6.68733 48.9197C6.55872 47.8672 5.23886 40.9429 4.04082 40.3405C4.57215 40.4488 23.8693 44.493 18.4274 55.9319ZM23.3515 58.8593C23.3515 58.8593 33.7141 49.7217 34.0999 42.8348C34.0999 42.8348 29.3383 52.7913 21.0366 57.4988C21.0366 57.4988 19.2971 50.1719 21.9369 45.8603C23.7508 42.8957 26.7222 41.6638 28.4008 41.1866C29.9237 40.75 31.3858 40.1307 32.7733 39.3659C34.8343 38.2321 37.1559 36.6788 37.095 35.4537C37.4538 37.8429 40.2627 59.6512 23.3515 58.8593Z" fill="#A4C34E"/>
 								</svg>	
-								<h3>Agriculture and Natural Resource Services</h3>
+								<h3 id="Service_Card_Title_1">Agriculture and Natural Resource Services</h3>
 							</div>
 							<div class="Service_Card Background_Color_2">
 								<svg width="61" height="64" viewBox="0 0 61 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,7 +176,7 @@
 										</clipPath>
 									</defs>
 								</svg>
-								<h3>Environmental Services</h3>
+								<h3 id="Service_Card_Title_2">Environmental Services</h3>
 							</div>
 							<div class="Service_Card Background_Color_2">
 								<svg width="81" height="64" viewBox="0 0 81 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -197,7 +199,7 @@
 										</clipPath>
 									</defs>
 								</svg>
-								<h3>Training and Safety Services</h3>
+								<h3 id="Service_Card_Title_3">Training and Safety Services</h3>
 							</div>
 						</div>
 					</div>
@@ -209,17 +211,17 @@
 						<svg width="41" height="64" viewBox="0 0 41 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M37.7854 32.5838L20.4749 0L3.12368 32.6616C2.89694 33.017 2.67696 33.3859 2.47052 33.7683C2.05764 34.523 1.71244 35.3149 1.71244 35.3149C1.71244 35.3149 1.25895 36.3505 0.920522 37.4335C0.321506 39.3591 0 41.4066 0 43.5251C0 54.8354 9.16461 64 20.4749 64C31.7851 64 40.9497 54.8354 40.9497 43.5251C40.9497 39.5012 39.7889 35.7481 37.7854 32.5838ZM18.4274 55.9319C18.4274 55.9319 13.307 46.016 9.70948 44.8146C9.70948 44.8146 16.5863 54.013 17.1481 57.3702C17.1481 57.3702 14.8163 58.1452 11.1275 55.8947C8.89387 54.5376 7.16112 52.3581 6.78885 49.7725C6.74147 49.4612 6.72117 49.1803 6.68733 48.9197C6.55872 47.8672 5.23886 40.9429 4.04082 40.3405C4.57215 40.4488 23.8693 44.493 18.4274 55.9319ZM23.3515 58.8593C23.3515 58.8593 33.7141 49.7217 34.0999 42.8348C34.0999 42.8348 29.3383 52.7913 21.0366 57.4988C21.0366 57.4988 19.2971 50.1719 21.9369 45.8603C23.7508 42.8957 26.7222 41.6638 28.4008 41.1866C29.9237 40.75 31.3858 40.1307 32.7733 39.3659C34.8343 38.2321 37.1559 36.6788 37.095 35.4537C37.4538 37.8429 40.2627 59.6512 23.3515 58.8593Z" fill="#A4C34E"/>
 						</svg>	
-						<h2 class="Feature_Header">Agriculture and Natural Resource Services</h2>
+						<h2 class="Feature_Header" id="Feature_Header_2">Agriculture and Natural Resource Services</h2>
 					</div>
 					<div class="Features Text_Color_2">
 						<ul class="Features_List">
-							<li class="Feature">Evaluating agricultural lands</li>
-							<li class="Feature">Soil and groundwater analysis</li>
-							<li class="Feature">Petrochemical Analysis</li>
-							<li class="Feature">Waste water management and analysis</li>
-							<li class="Feature">Testing new products’ compliance with local and international standards</li>
-							<li class="Feature">Field and laboratory environmental measurements</li>
-							<li class="Feature">Operation, maintenance and supply of laboratories</li>
+							<li class="Feature" id="Feature_1">Evaluating agricultural lands</li>
+							<li class="Feature" id="Feature_2">Soil and groundwater analysis</li>
+							<li class="Feature" id="Feature_3">Petrochemical Analysis</li>
+							<li class="Feature" id="Feature_4">Waste water management and analysis</li>
+							<li class="Feature" id="Feature_5">Testing new products’ compliance with local and international standards</li>
+							<li class="Feature" id="Feature_6">Field and laboratory environmental measurements</li>
+							<li class="Feature" id="Feature_7">Operation, maintenance and supply of laboratories</li>
 						</ul>
 					</div>
 				</div>
@@ -241,17 +243,17 @@
 								</clipPath>
 							</defs>
 						</svg>
-						<h2 class="Feature_Header">Environmental Services</h2>
+						<h2 class="Feature_Header" id="Feature_Header_3">Environmental Services</h2>
 					</div>
 					<div class="Features Text_Color_2">
 						<ul class="Features_List">
-							<li class="Feature">Studies of the environmental impact of industrial, agricultural and food processes</li>
-							<li class="Feature">Environmental management programs</li>
-							<li class="Feature">Develop and manage certified industrial facilities</li>
-							<li class="Feature">Environmental monitoring programs</li>
-							<li class="Feature">Monitoring stations’ supply and operation</li>
-							<li class="Feature">Medical, Industrial, Agricultural waste management programs</li>
-							<li class="Feature">Field assessment of air, soil, water and marine environments</li>
+							<li class="Feature" id="Feature_8">Studies of the environmental impact of industrial, agricultural and food processes</li>
+							<li class="Feature" id="Feature_9">Environmental management programs</li>
+							<li class="Feature" id="Feature_10">Develop and manage certified industrial facilities</li>
+							<li class="Feature" id="Feature_11">Environmental monitoring programs</li>
+							<li class="Feature" id="Feature_12">Monitoring stations’ supply and operation</li>
+							<li class="Feature" id="Feature_13">Medical, Industrial, Agricultural waste management programs</li>
+							<li class="Feature" id="Feature_14">Field assessment of air, soil, water and marine environments</li>
 						</ul>
 					</div>
 				</div>
@@ -279,17 +281,17 @@
 								</clipPath>
 							</defs>
 						</svg>
-						<h2 class="Feature_Header">Training and Safety Services</h2>
+						<h2 class="Feature_Header" id="Feature_Header_4">Training and Safety Services</h2>
 					</div>
 					<div class="Features Text_Color_2">
 						<ul class="Features_List">
-							<li class="Feature">Environmental awareness through campaigns and exhibitions</li>
-							<li class="Feature">Programs to develop skills for the environmentally-friendly work environment</li>
-							<li class="Feature">Fieldwork teams for training and environmental awareness</li>
-							<li class="Feature">Environmental programs and courses for establishment training</li>
-							<li class="Feature">OSHA Standard Safety Training</li>
-							<li class="Feature">IS014001 Training</li>
-							<li class="Feature">Specialized programs to raise awareness of consumer items impact</li>
+							<li class="Feature" id="Feature_15">Environmental awareness through campaigns and exhibitions</li>
+							<li class="Feature" id="Feature_16">Programs to develop skills for the environmentally-friendly work environment</li>
+							<li class="Feature" id="Feature_17">Fieldwork teams for training and environmental awareness</li>
+							<li class="Feature" id="Feature_18">Environmental programs and courses for establishment training</li>
+							<li class="Feature" id="Feature_19">OSHA Standard Safety Training</li>
+							<li class="Feature" id="Feature_20">IS014001 Training</li>
+							<li class="Feature" id="Feature_21">Specialized programs to raise awareness of consumer items impact</li>
 						</ul>
 					</div>
 				</div>
@@ -300,8 +302,8 @@
 					<div class="Blog_Card Cover_Background Text_Color_2" style="background-image: url(./assets/blog-card-1.jpg);">
 						<div class="Blog_Card_Overlay Background_Color_3">
 							<span></span>
-							<h3 class="Blog_Title Central_Text_Alignment">Our Story</h3>
-							<span class="Blog_Date">July 2, 2023</span>
+							<h3 class="Blog_Title Central_Text_Alignment" id="Blog_Title_1">Our Story</h3>
+							<span class="Blog_Date" id="Blog_Date_1">July 2, 2023</span>
 						</div>
 						<div class="Blog_Card_Hover_Overlay Background_Color_3 Padding_2rem">
 							<div class="Blog_Card_Hover_Overlay_Content">
@@ -313,8 +315,8 @@
 					<div class="Blog_Card Cover_Background Text_Color_2" style="background-image: url(./assets/blog-card-2.jpg);">
 						<div class="Blog_Card_Overlay Background_Color_3">
 							<span></span>
-							<h3 class="Blog_Title Central_Text_Alignment">Company Update 1</h3>
-							<span class="Blog_Date">July 9, 2023</span>
+							<h3 class="Blog_Title Central_Text_Alignment" id="Blog_Title_2">Company Update 1</h3>
+							<span class="Blog_Date" id="Blog_Date_2">July 9, 2023</span>
 						</div>
 						<div class="Blog_Card_Hover_Overlay Background_Color_3 Padding_2rem">
 							<div class="Blog_Card_Hover_Overlay_Content">
@@ -326,8 +328,8 @@
 					<div class="Blog_Card Cover_Background Text_Color_2" style="background-image: url(./assets/blog-card-3.jpg);">
 						<div class="Blog_Card_Overlay Background_Color_3">
 							<span></span>
-							<h3 class="Blog_Title Central_Text_Alignment">Company Update 2</h3>
-							<span class="Blog_Date">July 16, 2023</span>
+							<h3 class="Blog_Title Central_Text_Alignment" id="Blog_Title_3">Company Update 2</h3>
+							<span class="Blog_Date" id="Blog_Date_3">July 16, 2023</span>
 						</div>
 						<div class="Blog_Card_Hover_Overlay Background_Color_3 Padding_2rem">
 							<div class="Blog_Card_Hover_Overlay_Content">
@@ -339,17 +341,24 @@
 				</div>
 			</div>
 			<div class="Full_Height_Section Contact_Us_Section Background_Color_1">
-				<h1>Start working with us now</h1>
+				<h1 id="Contact_Us_Header">Start working with us now</h1>
 				<form class="Contact_Us_Form">
-					<input class="Input_Field" placeholder="Name" />
-					<input class="Input_Field" placeholder="Email" />
+					<div class="Input_Field_Container">
+						<input class="Input_Field" placeholder="Name" />
+						<label class="Input_Label Background_Color_1" id="Label_1">Name</label>
+					</div>
+					<div class="Input_Field_Container">
+						<input class="Input_Field" placeholder="Email" />
+						<label class="Input_Label Background_Color_1" id="Label_2">Email</label>
+					</div>
 					<div class="Dropdown_Menu_Container">
+						<label class="Input_Label Background_Color_1">Requested Service</label>
 						<input class='Dropdown_Menu_Controller' type="checkbox" />
 						<div class='Dropdown_Menu_Box'>
-							<div class='Dropdown_Menu_Selected_Value'><span class="Dropdown_Menu_Label">Requested Service</span></div>
+							<div class='Dropdown_Menu_Selected_Value'><span class="Dropdown_Menu_Label" id="Label_3">Requested Service</span></div>
 							<div class='Dropdown_Menu_Arrow_Icon'></div>
 						</div>
-						<div class='Dropdown_Menu_Options'>
+						<div class='Dropdown_Menu_Options Background_Color_1'>
 							<div class="Dropdown_Menu_Option">
 								<input class="Selection_Controller Top_Half" type="radio" value="Service 1" />
 								<input class="Selection_Controller Bottom_Half" type="radio" value="Service 1" />
@@ -359,16 +368,19 @@
 							<div class='Option_Background'></div>
 						</div>
 					</div>
-					<textarea class="Input_Field" placeholder="Message"></textarea>
+					<div class="Input_Field_Container">
+						<textarea class="Input_Field" placeholder="Message"></textarea>
+						<label class="Input_Label Background_Color_1" id="Label_4">Message</label>
+					</div>
 				</form>
-				<button class="Standard_Button">Send Message</button>
+				<button class="Standard_Button" id="Call_to_Action_2">Send Message</button>
 			</div>
 		</main>
 		<footer class="Footer Padding_Left_4rem Padding_Right_4rem Padding_Top_1rem Padding_Bottom_1rem Background_Color_2 Text_Color_2">
-			<p class="Footer_Copyright">© 2023 United Expertise Company. All rights reserved.</p>
+			<p class="Footer_Copyright" id="Copyright">© 2023 United Expertise Company. All rights reserved.</p>
 			<div class="Footer_Links">
-				<a href="#">Terms of Use</a>
-				<a href="#">Privacy Policy</a>
+				<a id="Terms_of_Use" href="#">Terms of Use</a>
+				<a id="Privacy_Policy">Privacy Policy</a>
 			</div>
 		</footer>
 	</body>
