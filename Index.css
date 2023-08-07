@@ -281,6 +281,7 @@
 .Input_Field_Container
 {
 	position: relative;
+	width: 100%;
 }
 
 .Input_Field
@@ -294,7 +295,6 @@
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	width: 100%;
-	margin-left: 1.25rem; /* This is a hack, it's just here to align the field visually with the dropdown */
 }
 
 .Input_Field:focus::placeholder
@@ -340,11 +340,12 @@
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	width: calc(100% - 0.25rem);
-	padding-right: 1.25rem;
+	width: 100%;
+	padding-right: 1rem;
 	margin-left: 1.25rem;
 	border: 0.125rem solid #000000;
 	border-radius: 1rem;
+
 }
 
 .Dropdown_Menu_Controller
