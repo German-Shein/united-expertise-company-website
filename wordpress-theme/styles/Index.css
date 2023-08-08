@@ -29,7 +29,7 @@
 
 .Hero_Image
 {
-	background-image: url('./assets/hero-image.png');
+	background-image: url('../assets/images/hero-image.png');
 	flex: 1 1 0;
 }
 
@@ -53,33 +53,33 @@
 
 .English_Language
 {
-	background-image: url('./assets/english-slider.png');
+	background-image: url('../assets/images/english-slider.png');
 }
 
 .Arabic_Language
 {
-	background-image: url('./assets/arabic-slider.png');
+	background-image: url('../assets/images/arabic-slider.png');
 	margin-left: 2rem;
 }
 
 .Cover_Image_1
 {
-	background-image: url('./assets/cover-image-1.jpg');
+	background-image: url('../assets/images/cover-image-1.jpg');
 }
 
 .Cover_Image_2
 {
-	background-image: url('./assets/cover-image-2.jpg');
+	background-image: url('../assets/images/cover-image-2.jpg');
 }
 
 .Cover_Image_3
 {
-	background-image: url('./assets/cover-image-3.jpg');
+	background-image: url('../assets/images/cover-image-3.jpg');
 }
 
 .Cover_Image_4
 {
-	background-image: url('./assets/cover-image-4.jpg');
+	background-image: url('../assets/images/cover-image-4.jpg');
 }
 
 .Feature_Section
