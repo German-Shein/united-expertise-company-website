@@ -8,7 +8,7 @@ function Add_CSS ()
 	wp_enqueue_style ('Global');
 	wp_register_style ('Index', get_template_directory_uri () . '/styles/Index.css', false);
 	wp_enqueue_style ('Index');
-	wp_register_style ('Fonts', get_template_directory_uri () . '/styles/Utility.css', false);
+	wp_register_style ('Utility', get_template_directory_uri () . '/styles/Utility.css', false);
 	wp_enqueue_style ('Utility');
 }
 

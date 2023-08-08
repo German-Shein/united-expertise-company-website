@@ -279,7 +279,7 @@
     <div class="Full_Height_Section Blog_Section Background_Color_2">
         <h2 class="Central_Text_Alignment Text_Color_1 Padding_Top_4rem">Blogs</h2>
         <div class="Blog_Cards Padding_Top_4rem Padding_Bottom_4rem Padding_Left_8rem Padding_Right_8rem">
-            <div class="Blog_Card Cover_Background Text_Color_2" style="background-image: url(./assets/blog-card-1.jpg);">
+            <div class="Blog_Card Cover_Background Text_Color_2" style="background-image: url(<?php echo get_template_directory_uri () . '/assets/images/blog-card-3.jpg'; ?>);">
                 <div class="Blog_Card_Overlay Background_Color_3">
                     <span></span>
                     <h3 class="Blog_Title Central_Text_Alignment" id="Blog_Title_1">Our Story</h3>
@@ -292,7 +292,7 @@
                     </div>
                 </div>
             </div>
-            <div class="Blog_Card Cover_Background Text_Color_2" style="background-image: url(./assets/blog-card-2.jpg);">
+            <div class="Blog_Card Cover_Background Text_Color_2" style="background-image: url(<?php echo get_template_directory_uri () . '/assets/images/blog-card-3.jpg'; ?>);">
                 <div class="Blog_Card_Overlay Background_Color_3">
                     <span></span>
                     <h3 class="Blog_Title Central_Text_Alignment" id="Blog_Title_2">Company Update 1</h3>
@@ -305,7 +305,7 @@
                     </div>
                 </div>
             </div>
-            <div class="Blog_Card Cover_Background Text_Color_2" style="background-image: url(./assets/blog-card-3.jpg);">
+            <div class="Blog_Card Cover_Background Text_Color_2" style="background-image: url(<?php echo get_template_directory_uri () . '/assets/images/blog-card-3.jpg'; ?>);">
                 <div class="Blog_Card_Overlay Background_Color_3">
                     <span></span>
                     <h3 class="Blog_Title Central_Text_Alignment" id="Blog_Title_3">Company Update 2</h3>
