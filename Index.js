@@ -265,3 +265,15 @@ const Toggle_Language = () =>
 		Text.forEach (Text_Element => Text_Element.classList.remove ('Arabic_Text'))
 	}
 }
+
+Array.from (document.getElementsByClassName ('Dropdown_Menu_Container')).forEach ((Element, Index) =>
+{
+	Element.addEventListener ('click', Event =>
+	{
+		if (Event.target !== Element && document.getElementsByClassName ('Dropdown_Menu_Controller') [Index].value)
+		{
+			document.getElementsByClassName ('Dropdown_Menu_Controller') [Index].value = false;
+		}
+	})
+	
+});

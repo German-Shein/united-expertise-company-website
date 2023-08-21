@@ -7,11 +7,11 @@
 		<title><?php bloginfo ('name'); ?></title>
 		<meta name="description" content="United Expertise Company (UEC) provides environmental consulting and studies services to assess environmental damages and offer economic solutions with a focus on environmental safety. Our highly qualified national (Saudi) team has over 30 years of experience.">
 		<meta name="keywords" content="United Expertise Company, UEC, Environmental Consultancy, Environmental Studies, Environmental Services, Environmental Damage Assessment, Environmental Safety, Saudi Arabia">
-		<link rel="canonical" href="https://www.uec-env.sa">
+		<link rel="canonical" href="https://www.uec-env.com.sa">
 		<meta property="og:title" content="United Expertise Company | Environmental Consultancy Services">
 		<meta property="og:description" content="United Expertise Company (UEC) provides environmental consulting and studies services to assess environmental damages and offer economic solutions with a focus on environmental safety. Our highly qualified national (Saudi) team has over 30 years of experience.">
-		<meta property="og:image" content="https://www.uec-env.sa/assets/logo.svg">
-		<meta property="og:url" content="https://www.uec-env.sa">
+		<meta property="og:image" content="https://www.uec-env.com.sa/assets/logo.svg">
+		<meta property="og:url" content="https://www.uec-env.com.sa">
 		<meta property="og:type" content="website">
 		<?php wp_head() ?>
 	</head>

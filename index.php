@@ -332,8 +332,8 @@
                 <label class="Input_Label Background_Color_1" id="Label_2">Email</label>
             </div>
             <div class="Dropdown_Menu_Container">
-                <label class="Input_Label Background_Color_1">Requested Service</label>
                 <input class='Dropdown_Menu_Controller' type="checkbox" />
+                <label class="Input_Label Background_Color_1">Requested Service</label>
                 <div class='Dropdown_Menu_Box'>
                     <div class='Dropdown_Menu_Selected_Value'><span class="Dropdown_Menu_Label" id="Label_3">Requested Service</span></div>
                     <div class='Dropdown_Menu_Arrow_Icon'></div>
@@ -361,7 +361,7 @@
                 </div>
             </div>
             <div class="Input_Field_Container">
-                <textarea class="Input_Field" placeholder="Message"></textarea>
+                <textarea class="Input_Field" placeholder="Message" rows="6"></textarea>
                 <label class="Input_Label Background_Color_1" id="Label_4">Message</label>
             </div>
         </form>
