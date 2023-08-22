@@ -576,3 +576,18 @@ input[type="radio"]
 		width: 100%;
 	}
 }
+
+.Legal > h1
+{
+	padding-bottom: 2rem;
+}
+
+.Legal > h2
+{
+	padding-bottom: 1rem;
+}
+
+.Legal > p:not(:last-of-type)
+{
+	padding-bottom: 1rem;
+}

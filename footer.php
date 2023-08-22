@@ -2,8 +2,8 @@
 			<?php wp_footer (); ?>
 			<p class="Footer_Copyright" id="Copyright">© 2023 United Expertise Company. All rights reserved.</p>
 			<div class="Footer_Links">
-				<a id="Terms_of_Use" href="#">Terms of Use</a>
-				<a id="Privacy_Policy" href="#">Privacy Policy</a>
+				<a id="Terms_of_Use" href="./legal?document=terms-of-use">Terms of Use</a>
+				<a id="Privacy_Policy" href="./legal?document=privacy-policy">Privacy Policy</a>
 			</div>
 		</footer>
 	</body>
