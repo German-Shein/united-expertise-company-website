@@ -274,6 +274,19 @@ Array.from (document.getElementsByClassName ('Dropdown_Menu_Container')).forEach
 		{
 			document.getElementsByClassName ('Dropdown_Menu_Controller') [Index].value = false;
 		}
-	})
-	
+	});
 });
+
+const Send_Email = async () =>
+{
+	const Request = new FormData ();
+	Request.append ('action', 'Send_Email');
+	Request.append ('Name', document.getElementsByClassName ('Input_Field') [0].value);
+	Request.append ('Email', document.getElementsByClassName ('Input_Field') [1].value);
+	Request.append ('Subject', `Request for ${document.querySelector ('.Selection_Controller:checked').value}`);
+	Request.append ('Message', document.getElementsByClassName ('Input_Field') [2].value);
+	const Response = await fetch (`${window.location.origin}/wp-admin/admin-ajax.php`, { method: 'POST', body: Request });
+	const Response_Body = await Response.text ();
+	console.log (Response);
+	console.log (Response_Body); 
+}

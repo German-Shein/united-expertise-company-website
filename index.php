@@ -365,7 +365,7 @@
                 <label class="Input_Label Background_Color_1" id="Label_4">Message</label>
             </div>
         </form>
-        <button class="Standard_Button" id="Call_to_Action_2">Send Message</button>
+        <button class="Standard_Button" id="Call_to_Action_2" onclick="Send_Email ()">Send Message</button>
     </div>
 </main>
 <?php get_footer(); ?>
