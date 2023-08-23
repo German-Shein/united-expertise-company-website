@@ -19,6 +19,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	gap: 2rem;
 }
 
 .Hero_Header
@@ -49,6 +50,11 @@
 	width: 1.5rem;
 	margin: 0.125rem;
 	border-radius: 50%;
+}
+
+.Company_Logo
+{
+	max-width: 32rem;
 }
 
 .English_Language
@@ -118,6 +124,7 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 2rem;
+	justify-content: center;
 }
 
 .Service_Card
@@ -159,6 +166,7 @@
 	flex-wrap: wrap;
 	flex-grow: 1;
 	gap: 4rem;
+	justify-content: center;
 }
 
 .Blog_Card
@@ -168,6 +176,7 @@
 	min-width: 20rem;
 	max-width: 24rem;
 	border-radius: 2rem;
+	height: 32rem;
 }
 
 .Blog_Card:hover
@@ -190,8 +199,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	min-width: 20rem;
-	max-width: 24rem;
+	width: 100%;
 	height: 100%;
 	border-radius: 2rem;
 	cursor: pointer;
@@ -274,14 +282,12 @@
 	gap: 2rem;
 	align-items: center;
 	justify-content: center;
-	max-width: 40rem;
-	min-width: 24rem;
+	width: 100%;
 }
 
 .Input_Field_Container
 {
 	position: relative;
-	width: 100%;
 }
 
 .Input_Field
@@ -294,7 +300,8 @@
 	font-size: 1.5rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
-	width: 100%;
+	max-width: 40rem;
+	min-width: 20rem;
 }
 
 .Input_Field:focus::placeholder
@@ -305,16 +312,6 @@
 .Input_Field:focus ~ .Input_Label
 {
 	display: block;
-}
-
-.Dropdown_Menu_Controller:checked ~ .Input_Label
-{
-	display: block;
-}
-
-.Dropdown_Menu_Controller:checked ~ .Dropdown_Menu_Box > .Dropdown_Menu_Selected_Value > .Dropdown_Menu_Label
-{
-	color: transparent;
 }
 
 .Input_Label
@@ -334,6 +331,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	gap: 2rem;
 }
 
 .Footer_Links
@@ -345,17 +343,26 @@
 
 /* Dropdown */
 
+.Dropdown_Menu_Controller:checked ~ .Input_Label
+{
+	display: block;
+}
+
+.Dropdown_Menu_Controller:checked ~ .Dropdown_Menu_Box > .Dropdown_Menu_Selected_Value > .Dropdown_Menu_Label
+{
+	color: transparent;
+}
+
 .Dropdown_Menu_Container
 {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	width: 100%;
 	padding-right: 1rem;
-	margin-left: 1.25rem;
 	border: 0.125rem solid #000000;
 	border-radius: 1rem;
-
+	max-width: 40rem;
+	min-width: 20rem;
 }
 
 .Dropdown_Menu_Controller
@@ -388,7 +395,9 @@
 
 .Dropdown_Menu_Controller:not(:checked) ~ .Dropdown_Menu_Options .Dropdown_Menu_Option input[type="radio"]:checked ~ .Option_Value 
 {
-	top: -1.6rem;
+	background-color: #FBF4E6;
+	top: -2.8rem;
+	white-space: nowrap;
 }
 
 .Dropdown_Menu_Controller:checked ~ .Dropdown_Menu_Options .Dropdown_Menu_Option input[type="radio"]:checked ~ .Option_Value 
@@ -521,7 +530,7 @@ input[type="radio"]
 {
 	position: absolute;
 	left: 1rem;
-	height: 1.25rem;
+	height: 1.5rem;
 	transform: scale(0);
 }
 
@@ -577,6 +586,11 @@ input[type="radio"]
 	}
 }
 
+.Legal
+{
+	min-height: 100vh;
+}
+
 .Legal > h1
 {
 	padding-bottom: 2rem;
@@ -590,4 +604,18 @@ input[type="radio"]
 .Legal > p:not(:last-of-type)
 {
 	padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 640px) 
+{
+	.Hero_Image
+	{
+		display: none;
+	}
+
+	.Blog_Cards
+	{
+		padding-left: 2rem !important;
+		padding-right: 2rem !important;
+	}
 }

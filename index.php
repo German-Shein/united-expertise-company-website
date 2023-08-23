@@ -6,7 +6,7 @@
                 <div class="Language_Toggle_Switch_Button English_Language Cover_Background"></div>
                 <div class="Language_Toggle_Switch_Button Arabic_Language Cover_Background" style="display: none;"></div>
             </div>
-            <svg width="512" height="332" viewBox="0 0 512 332" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="Company_Logo" viewBox="0 0 512 332" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_115_8)">
                     <path d="M134.825 128.774V151.519H171.913V171.257H134.825V194.001H179.42V211.26H116.49V111.516H179.42V128.774H134.825Z" fill="#408B4F"/>
                     <path d="M208.714 159.039V163.094C208.714 179.197 220.565 193.962 239.582 193.962C258.599 193.962 260.83 190.891 260.83 190.891V207.664C254.884 210.052 240.146 210.617 240.146 210.617C238.059 210.866 215.63 213.176 200.708 196.758C189.369 184.29 188.922 168.239 188.896 165.876V155.994C189.08 145.508 193.319 111.516 240.146 111.516C240.146 111.516 254.884 112.08 260.83 114.469V131.242C260.83 131.242 258.599 128.171 239.582 128.171C220.565 128.171 208.714 142.935 208.714 159.039Z" fill="#408B4F"/>
@@ -320,8 +320,8 @@
             </div>
         </div>
     </div>
-    <div class="Full_Height_Section Contact_Us_Section Background_Color_1">
-        <h1 id="Contact_Us_Header">Start working with us now</h1>
+    <div class="Full_Height_Section Contact_Us_Section Padding_Bottom_2rem Padding_Top_2rem Background_Color_1">
+        <h1 class="Central_Text_Alignment" id="Contact_Us_Header">Start working with us now</h1>
         <form class="Contact_Us_Form">
             <div class="Input_Field_Container">
                 <input class="Input_Field" placeholder="Name" />
