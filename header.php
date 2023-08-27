@@ -13,6 +13,7 @@
 		<meta property="og:image" content="https://www.uec-env.com.sa/assets/logo.svg">
 		<meta property="og:url" content="https://www.uec-env.com.sa">
 		<meta property="og:type" content="website">
+		<script>const API_Endpoint = '<?php echo API_Endpoint; ?>';</script>
 		<?php wp_head() ?>
 	</head>
 	<body>
