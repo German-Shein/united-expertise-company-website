@@ -3,7 +3,6 @@
 function Reload_Blogs ($Request) 
 {
     $Language = $Request -> get_param ('language');
-    switch_to_locale ($Language);
     $Blogs_HTML = Get_Blogs ($Language);
 	if ($Blogs_HTML != '') 
 	{

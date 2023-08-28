@@ -277,7 +277,7 @@
 		</div>
 	</div>
 	<div class="Full_Height_Section Blog_Section Background_Color_2">
-		<h2 class="Central_Text_Alignment Text_Color_1 Padding_Top_4rem">Blogs</h2>
+		<h2 class="Central_Text_Alignment Text_Color_1 Padding_Top_4rem" id="Blogs_Header">Blogs</h2>
 		<div class="Blog_Cards Padding_Top_4rem Padding_Bottom_4rem Padding_Left_8rem Padding_Right_8rem">
 			<?php Get_Blogs ('en'); ?>
 		</div>

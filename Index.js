@@ -170,6 +170,11 @@ const International_Text =
 		en: 'Specialized programs to raise awareness of consumer items impact',
 		ar: 'برامج متخصصة للتوعية بأثر المواد الاستهلاكية'
 	},
+	Blogs_Header:
+	{
+		en: 'Blogs',
+		ar: 'المدونات'
+	},
 	Contact_Us_Header:
 	{
 		en: 'Start working with us now',
@@ -207,7 +212,7 @@ const International_Text =
 	},
 	Privacy_Policy:
 	{
-		en: 'Privacy_Policy',
+		en: 'Privacy Policy',
 		ar: 'سياسة الخصوصية'
 	}
 }
@@ -216,7 +221,7 @@ const Toggle_Language = async () =>
 {
 	const Headers = [...document.getElementsByTagName ('h1'), ...document.getElementsByTagName ('h2'), ... document.getElementsByTagName ('h3'), ...document.getElementsByTagName ('h4'), ...document.getElementsByTagName ('h5'), ...document.getElementsByTagName ('h6')]
 	const Language = document.documentElement.getAttribute ('lang');
-	const Text = [...document.getElementsByTagName ('p'), ...document.getElementsByTagName ('span'), ... document.getElementsByTagName ('div'), ...document.getElementsByTagName ('input'), ...document.getElementsByTagName ('textarea'), ...document.getElementsByTagName ('label'), ...document.getElementsByTagName ('li')]
+	const Text = [...document.getElementsByTagName ('p'), ...document.getElementsByTagName ('a'), ...document.getElementsByTagName ('span'), ... document.getElementsByTagName ('div'), ...document.getElementsByTagName ('input'), ...document.getElementsByTagName ('textarea'), ...document.getElementsByTagName ('label'), ...document.getElementsByTagName ('li')]
 	document.documentElement.setAttribute ('lang', Language === 'en' ? 'ar' : 'en');
 	Object.keys (International_Text).forEach (ID => document.getElementById (ID).innerHTML = International_Text [ID] [Language === 'en' ? 'ar' : 'en']);
 	if (Language === 'en')
@@ -225,7 +230,6 @@ const Toggle_Language = async () =>
 		document.getElementsByClassName ('English_Language') [0].setAttribute ('style', 'display: none;');
 		Headers.forEach (Header => Header.classList.add ('Arabic_Header'))
 		Text.forEach (Text_Element => Text_Element.classList.add ('Arabic_Text'))
-
 	}
 	else if (Language === 'ar')
 	{
@@ -236,9 +240,8 @@ const Toggle_Language = async () =>
 	}
 	const Response = await fetch (`${window.location.origin}/wp-json/uec-theme/api/blogs?language=${Language === 'en' ? 'ar' : 'en'}`);
 	const Blogs_HTML = await Response.text ();
-	console.log (Response);
-	console.log (Blogs_HTML);
 	document.getElementsByClassName ('Blog_Cards') [0].innerHTML = Blogs_HTML;
+	document.getElementsByClassName ('Footer') [0].classList.add ('Reverse_Flex_Row');
 }
 
 Array.from (document.getElementsByClassName ('Dropdown_Menu_Container')).forEach ((Element, Index) =>

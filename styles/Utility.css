@@ -466,3 +466,9 @@
 {
 	font-family: 'Cairo', sans-serif;
 }
+
+.Reverse_Flex_Row
+{
+	display: flex;
+	flex-direction: row-reverse;
+}

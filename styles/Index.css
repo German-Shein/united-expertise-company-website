@@ -221,7 +221,10 @@
 
 .Blog_Card_Overlay:hover~.Blog_Card_Hover_Overlay
 {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .Blog_Card_Hover_Overlay
