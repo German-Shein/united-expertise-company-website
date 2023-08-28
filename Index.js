@@ -234,7 +234,7 @@ const Toggle_Language = async () =>
 		Headers.forEach (Header => Header.classList.remove ('Arabic_Header'))
 		Text.forEach (Text_Element => Text_Element.classList.remove ('Arabic_Text'))
 	}
-	const Response = await fetch (`${API_Endpoint}?language=${Language === 'en' ? 'ar' : 'en'}&action=wp_ajax_reload_blogs`);
+	const Response = await fetch (`${window.location.origin}/wp-json/uec-theme/api/blogs?language=${Language === 'en' ? 'ar' : 'en'}`);
 	const Blogs_HTML = await Response.text ();
 	console.log (Response);
 	console.log (Blogs_HTML);
