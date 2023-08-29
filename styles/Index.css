@@ -253,6 +253,15 @@
 	padding-left: 2rem;
 }
 
+.Blog_Date_in_Arabic
+{
+	align-self: flex-end;
+	justify-self: flex-end;
+	padding-bottom: 2rem;
+	padding-right: 2rem;
+	text-align: right;
+}
+
 .Feature
 {
 	text-align: center;
@@ -621,4 +630,10 @@ input[type="radio"]
 		padding-left: 2rem !important;
 		padding-right: 2rem !important;
 	}
+}
+
+.Blog_Container
+{
+	min-height: 100vh;
+	padding: 2rem;
 }

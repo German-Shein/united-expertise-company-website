@@ -21,9 +21,43 @@ function Add_JavaScript ()
 }
 add_action ('wp_enqueue_scripts', 'Add_JavaScript');
 
+function Get_Hijri_Date ()
+{
+	// Source: https://redacacia.me/2010/08/16/coding-in-php-a-hijri-gregorian-calendar/
+
+	$western_arabic = array('0','1','2','3','4','5','6','7','8','9');
+	$eastern_arabic = array('٠','١','٢','٣','٤','٥','٦','٧','٨','٩');
+	$Months = array ("ٱلْمُحَرَّم","صَفَر","رَبِيع ٱلْأَوَّل","رَبِيع ٱلْآخِر","جُمَادَىٰ ٱلْأُولَىٰ","جُمَادَىٰ ٱلْآخِرَة","رَجَب","شَعْبَان","رَمَضَان","شَوَّال","ذُو ٱلْقَعْدَة","ذُو ٱلْحِجَّة");
+	$TDays=round(strtotime(get_the_date ('F j, Y'))/(60*60*24));
+	$HYear=round($TDays/354.37419);
+	$Remain=$TDays-($HYear*354.37419);
+	$HMonths=round($Remain/29.531182);
+	$HDays=$Remain-($HMonths*29.531182);
+	$HYear=$HYear+1389;
+	$HMonths=$HMonths+10;
+	$HDays=$HDays+23;
+	if ($HDays>29.531188 and round($HDays)!=30)
+	{
+		$HMonths=$HMonths+1;
+		$HDays=Round($HDays-29.531182);
+	}
+	else
+	{
+		$HDays=Round($HDays);
+	}
+	if($HMonths>12)
+	{
+		$HMonths=$HMonths-12;
+		$HYear=$HYear+1;
+	}
+	$HDays = str_replace($western_arabic, $eastern_arabic, $HDays);
+	$HYear = str_replace($western_arabic, $eastern_arabic, $HYear);
+	return $HDays . ' ' . $Months [$HMonths - 1] . ' ' . $HYear;
+}
+
 function Get_Blogs ($Language_Code)
 {
-    $Query = new WP_Query (array ('post_type' => 'post', 'orderby' => 'date', 'order' => $Language_Code === 'ar' ? 'ASC' : 'DESC'));
+    $Query = new WP_Query (array ('post_type' => 'post', 'orderby' => 'date', 'order' => ($Language_Code === 'ar' ? 'ASC' : 'DESC')));
     if ($Query -> have_posts ()) 
 	{
 		$Post_Number = 1;
@@ -54,7 +88,7 @@ function Get_Blogs ($Language_Code)
 					echo '<div class="Blog_Card_Overlay Background_Color_3">';
 						echo '<span></span>';
 						echo '<h3 class="Blog_Title Central_Text_Alignment Text_Color_2 Arabic_Header" id="Blog_Title_' . $Post_Number .'">' . get_the_title () . '</h3>';
-						echo '<span class="Blog_Date Text_Color_2 Arabic_Text" id="Blog_Date_' . $Post_Number .'">' . get_the_date ('F j, Y') .'</span>';
+						echo '<span class="Blog_Date_in_Arabic Text_Color_2 Arabic_Text" id="Blog_Date_' . $Post_Number .'">' . Get_Hijri_Date () .'</span>';
 					echo '</div>';
 					echo '<div class="Blog_Card_Hover_Overlay Background_Color_3 Padding_2rem">';
 						echo '<div class="Blog_Card_Hover_Overlay_Content Text_Color_2">';
