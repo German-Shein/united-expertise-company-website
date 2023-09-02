@@ -268,3 +268,44 @@ const Send_Email = async () =>
 	console.log (Response);
 	console.log (Response_Body); 
 }
+
+const Launch_Interaction_Observer = () =>
+{
+	if ('IntersectionObserver' in window) 
+	{
+		document.addEventListener ('DOMContentLoaded', () =>
+		{
+			const Handle_Intersection = Entries =>
+			{
+				Entries.forEach (Entry => 
+				{
+					if (Entry.isIntersecting) 
+					{
+						Entry.target.style.backgroundImage = `url("${Theme_URL + Entry.target.dataset.bgimage}")`;
+						Intersection_Observer.unobserve (Entry.target);
+					}
+				});
+			}
+			const Intersection_Observer = new IntersectionObserver (Handle_Intersection, { rootMargin: '10%', threshold: 0 });
+			document.querySelectorAll ('.Cover_Background').forEach (Element_with_Background_Image => Intersection_Observer.observe (Element_with_Background_Image));
+			const Mutation_Observer_Callback = Mutations =>
+			{
+				for (let Mutation of Mutations) 
+				{
+					if (Mutation.type === "childList") 
+					{
+						document.querySelectorAll ('.Cover_Background').forEach (Element => Intersection_Observer.observe (Element));
+					}
+				}
+			}
+			new MutationObserver (Mutation_Observer_Callback).observe (document.querySelectorAll ('.Language_Toggle_Switch') [0], { childList: true });
+			new MutationObserver (Mutation_Observer_Callback).observe (document.querySelectorAll ('.Blog_Cards') [0], { childList: true });
+		});
+	} 
+	else 
+	{
+		document.querySelectorAll ('.Cover_Background').forEach (Element_with_Background_Image => Element_with_Background_Image.style.backgroundImage = `url("${Theme_URL + Entry.target.dataset.bgimage}")`);
+	}
+}
+
+Launch_Interaction_Observer ();

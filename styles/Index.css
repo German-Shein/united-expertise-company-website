@@ -30,7 +30,6 @@
 
 .Hero_Image
 {
-	background-image: url('../assets/images/hero-image.png');
 	flex: 1 1 0;
 }
 
@@ -57,35 +56,9 @@
 	max-width: 32rem;
 }
 
-.English_Language
-{
-	background-image: url('../assets/images/english-slider.png');
-}
-
 .Arabic_Language
 {
-	background-image: url('../assets/images/arabic-slider.png');
 	margin-left: 2rem;
-}
-
-.Cover_Image_1
-{
-	background-image: url('../assets/images/cover-image-1.jpg');
-}
-
-.Cover_Image_2
-{
-	background-image: url('../assets/images/cover-image-2.jpg');
-}
-
-.Cover_Image_3
-{
-	background-image: url('../assets/images/cover-image-3.jpg');
-}
-
-.Cover_Image_4
-{
-	background-image: url('../assets/images/cover-image-4.jpg');
 }
 
 .Feature_Section
