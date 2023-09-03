@@ -180,6 +180,26 @@ const International_Text =
 		en: 'Start working with us now',
 		ar: 'ابدأ العمل معنا الآن'
 	},
+	Placeholder_1:
+	{
+		en: 'Name',
+		ar: 'اسم'
+	},
+	Placeholder_2:
+	{
+		en: 'Email',
+		ar: 'رِسالة إيميل'
+	},
+	Placeholder_3:
+	{
+		en: 'Requested Service',
+		ar: 'الخدمة المطلوبة'
+	},
+	Placeholder_4:
+	{
+		en: 'Message',
+		ar: 'خطاب'
+	},
 	Label_1:
 	{
 		en: 'Name',
@@ -223,26 +243,40 @@ const Toggle_Language = async () =>
 	const Language = document.documentElement.getAttribute ('lang');
 	const Text = [...document.getElementsByTagName ('p'), ...document.getElementsByTagName ('a'), ...document.getElementsByTagName ('span'), ... document.getElementsByTagName ('div'), ...document.getElementsByTagName ('input'), ...document.getElementsByTagName ('textarea'), ...document.getElementsByTagName ('label'), ...document.getElementsByTagName ('li')]
 	document.documentElement.setAttribute ('lang', Language === 'en' ? 'ar' : 'en');
-	Object.keys (International_Text).forEach (ID => document.getElementById (ID).innerHTML = International_Text [ID] [Language === 'en' ? 'ar' : 'en']);
+	Object.keys (International_Text).forEach (ID => document.getElementById (ID).placeholder === undefined ? document.getElementById (ID).innerHTML = International_Text [ID] [Language === 'en' ? 'ar' : 'en'] : document.getElementById (ID).placeholder = International_Text [ID] [Language === 'en' ? 'ar' : 'en']);
 	if (Language === 'en')
 	{
 		document.getElementsByClassName ('Arabic_Language') [0].setAttribute ('style', '');
 		document.getElementsByClassName ('English_Language') [0].setAttribute ('style', 'display: none;');
-		Headers.forEach (Header => Header.classList.add ('Arabic_Header'))
-		Text.forEach (Text_Element => Text_Element.classList.add ('Arabic_Text'))
+		Headers.forEach (Header => Header.classList.add ('Arabic_Header'));
+		Text.forEach (Text_Element => Text_Element.classList.add ('Arabic_Text'));
+		document.querySelectorAll ('.Input_Label').forEach (Input_Label_Element => 
+		{
+			Input_Label_Element.classList.add ('Right_1rem');
+			Input_Label_Element.classList.remove ('Left_1rem');
+		});
+		document.querySelectorAll ('.Input_Field').forEach (Input_Label_Element => Input_Label_Element.classList.add ('Arabic_Input'));
 	}
 	else if (Language === 'ar')
 	{
 		document.getElementsByClassName ('Arabic_Language') [0].setAttribute ('style', 'display: none;');
 		document.getElementsByClassName ('English_Language') [0].setAttribute ('style', '');
-		Headers.forEach (Header => Header.classList.remove ('Arabic_Header'))
-		Text.forEach (Text_Element => Text_Element.classList.remove ('Arabic_Text'))
+		Headers.forEach (Header => Header.classList.remove ('Arabic_Header'));
+		Text.forEach (Text_Element => Text_Element.classList.remove ('Arabic_Text'));
+		document.querySelectorAll ('.Input_Label').forEach (Input_Label_Element => 
+		{
+			Input_Label_Element.classList.add ('Left_1rem')
+			Input_Label_Element.classList.remove ('Right_1rem')
+		});
+		document.querySelectorAll ('.Input_Field').forEach (Input_Label_Element => Input_Label_Element.classList.remove ('Arabic_Input'));
 	}
 	const Response = await fetch (`${window.location.origin}/wp-json/uec-theme/api/blogs?language=${Language === 'en' ? 'ar' : 'en'}`);
 	const Blogs_HTML = await Response.text ();
 	document.getElementsByClassName ('Blog_Cards') [0].innerHTML = Blogs_HTML;
 	document.getElementsByClassName ('Footer') [0].classList.add ('Reverse_Flex_Row');
 }
+
+const Scroll_to_Contact_Us_Section = () => 	window.scrollTo ({ top: document.getElementsByClassName ('Contact_Us_Section') [0].offsetTop, behavior: "smooth" });
 
 Array.from (document.getElementsByClassName ('Dropdown_Menu_Container')).forEach ((Element, Index) =>
 {

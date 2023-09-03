@@ -467,8 +467,24 @@
 	font-family: 'Cairo', sans-serif;
 }
 
+.Arabic_Input
+{
+	direction: rtl;
+    padding-right: 1rem;
+}
+
 .Reverse_Flex_Row
 {
 	display: flex;
 	flex-direction: row-reverse;
+}
+
+.Left_1rem
+{
+	left: 1rem;
+}
+
+.Right_1rem
+{
+	right: 1rem;
 }

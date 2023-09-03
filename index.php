@@ -116,7 +116,7 @@
 			</svg>
 			<h1 class="Hero_Header" id="Hero_Header_1">Your Top Saudi Partner in Environmental Safety</h1>
 			<h3 class="Hero_Header" id="Hero_Header_2">Join us on a mission to build a cleaner world!</h3>
-			<button class="Standard_Button" id="Call_to_Action_1">Get a free quote</button>
+			<button class="Standard_Button" id="Call_to_Action_1" onclick="Scroll_to_Contact_Us_Section ()">Get a free quote</button>
 		</div>
 		<div class="Hero_Image Cover_Background" data-bgimage="/assets/images/hero-image.png"></div>
 	</div>
@@ -286,18 +286,18 @@
 		<h1 class="Central_Text_Alignment" id="Contact_Us_Header">Start working with us now</h1>
 		<form class="Contact_Us_Form">
 			<div class="Input_Field_Container">
-				<input class="Input_Field" placeholder="Name" />
-				<label class="Input_Label Background_Color_1" id="Label_1">Name</label>
+				<input class="Input_Field" id="Placeholder_1" placeholder="Name" />
+				<label class="Input_Label Background_Color_1" for="Placeholder_1" id="Label_1">Name</label>
 			</div>
 			<div class="Input_Field_Container">
-				<input class="Input_Field" placeholder="Email" />
-				<label class="Input_Label Background_Color_1" id="Label_2">Email</label>
+				<input class="Input_Field" id="Placeholder_2" placeholder="Email" />
+				<label class="Input_Label Background_Color_1 Left_1rem" for="Placeholder_2" id="Label_2">Email</label>
 			</div>
 			<div class="Dropdown_Menu_Container">
 				<input class='Dropdown_Menu_Controller' type="checkbox" />
-				<label class="Input_Label Background_Color_1">Requested Service</label>
+				<label class="Input_Label Background_Color_1 Left_1rem" id="Label_3">Requested Service</label>
 				<div class='Dropdown_Menu_Box'>
-					<div class='Dropdown_Menu_Selected_Value'><span class="Dropdown_Menu_Label" id="Label_3">Requested Service</span></div>
+					<div class='Dropdown_Menu_Selected_Value'><span class="Dropdown_Menu_Label" id="Placeholder_3">Requested Service</span></div>
 					<div class='Dropdown_Menu_Arrow_Icon'></div>
 				</div>
 				<div class='Dropdown_Menu_Options Background_Color_1'>
@@ -323,8 +323,8 @@
 				</div>
 			</div>
 			<div class="Input_Field_Container">
-				<textarea class="Input_Field" placeholder="Message" rows="6"></textarea>
-				<label class="Input_Label Background_Color_1" id="Label_4">Message</label>
+				<textarea class="Input_Field" id="Placeholder_4" placeholder="Message" rows="6"></textarea>
+				<label class="Input_Label Background_Color_1 Left_1rem" for="Placeholder_4" id="Label_4">Message</label>
 			</div>
 		</form>
 		<button class="Standard_Button" id="Call_to_Action_2" onclick="Send_Email ()">Send Message</button>

@@ -19,7 +19,15 @@ function Add_JavaScript ()
 	wp_register_script ('Index', get_template_directory_uri () . '/Index.min.js', true);
 	wp_enqueue_script ('Index');
 }
+
 add_action ('wp_enqueue_scripts', 'Add_JavaScript');
+
+function Add_Manifest_JSON () 
+{   
+	echo '<link rel="manifest" href="' . get_template_directory_uri () . '/manifest.json">';
+}
+
+add_action ('wp_head', 'Add_Manifest_JSON');
 
 function Get_Hijri_Date ()
 {
@@ -57,7 +65,7 @@ function Get_Hijri_Date ()
 
 function Get_Blogs ($Language_Code)
 {
-    $Query = new WP_Query (array ('post_type' => 'post', 'orderby' => 'date', 'order' => ($Language_Code === 'ar' ? 'ASC' : 'DESC')));
+    $Query = new WP_Query (array ('post_type' => 'post', 'orderby' => 'date', 'order' => ($Language_Code == 'ar' ? 'ASC' : 'DESC')));
     if ($Query -> have_posts ()) 
 	{
 		$Post_Number = 1;
