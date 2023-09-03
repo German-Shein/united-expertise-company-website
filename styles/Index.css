@@ -382,6 +382,8 @@
 	background-color: #FBF4E6;
 	top: -2.8rem;
 	white-space: nowrap;
+	width: 16rem;
+    overflow: hidden;
 }
 
 .Dropdown_Menu_Controller:checked ~ .Dropdown_Menu_Options .Dropdown_Menu_Option input[type="radio"]:checked ~ .Option_Value 
@@ -607,5 +609,19 @@ input[type="radio"]
 .Blog_Container
 {
 	min-height: 100vh;
-	padding: 2rem;
+}
+
+.Blog_Container > h1
+{
+	padding-bottom: 2rem;
+}
+
+.Blog_Container > h2
+{
+	padding-bottom: 1rem;
+}
+
+.Blog_Container > p:not(:last-of-type)
+{
+	padding-bottom: 1rem;
 }

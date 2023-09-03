@@ -471,6 +471,12 @@
 {
 	direction: rtl;
     padding-right: 1rem;
+	font-size: 0.9125rem;
+}
+
+.Arabic_Dropdown
+{
+	font-size: 0.9125rem;
 }
 
 .Reverse_Flex_Row

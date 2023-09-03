@@ -65,8 +65,8 @@ function Get_Hijri_Date ()
 
 function Get_Blogs ($Language_Code)
 {
-    $Query = new WP_Query (array ('post_type' => 'post', 'orderby' => 'date', 'order' => ($Language_Code == 'ar' ? 'ASC' : 'DESC')));
-    if ($Query -> have_posts ()) 
+    $Query = new WP_Query (array ('post_type' => 'post'));
+	if ($Query -> have_posts ()) 
 	{
 		$Post_Number = 1;
         while ($Query -> have_posts ())

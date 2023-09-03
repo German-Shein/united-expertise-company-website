@@ -220,10 +220,70 @@ const International_Text =
 		en: 'Message',
 		ar: 'خطاب'
 	},
+	Selection_Controller_Top_1:
+	{
+		en: 'Agriculture and Natural Resource Services',
+		ar: 'خدمات الزراعة والموارد الطبيعية'
+	},
+	Selection_Controller_Bottom_1:
+	{
+		en: 'Agriculture and Natural Resource Services',
+		ar: 'خدمات الزراعة والموارد الطبيعية'
+	},
+	Option_Label_1:
+	{
+		en: 'Agriculture and Natural Resource Services',
+		ar: 'خدمات الزراعة والموارد الطبيعية'
+	},
+	Option_Value_1:
+	{
+		en: 'Agriculture and Natural Resource Services',
+		ar: 'خدمات الزراعة والموارد الطبيعية'
+	},
+	Selection_Controller_Top_2:
+	{
+		en: 'Environmental Services',
+		ar: 'الخدمات البيئية'
+	},
+	Selection_Controller_Bottom_2:
+	{
+		en: 'Environmental Services',
+		ar: 'الخدمات البيئية'
+	},
+	Option_Label_2:
+	{
+		en: 'Environmental Services',
+		ar: 'الخدمات البيئية'
+	},
+	Option_Value_2:
+	{
+		en: 'Environmental Services',
+		ar: 'الخدمات البيئية'
+	},
+	Selection_Controller_Top_3:
+	{
+		en: 'Training and Safety Services',
+		ar: 'خدمات التدريب والسلامة'
+	},
+	Selection_Controller_Bottom_3:
+	{
+		en: 'Training and Safety Services',
+		ar: 'خدمات التدريب والسلامة'
+	},
+	Option_Label_3:
+	{
+		en: 'Training and Safety Services',
+		ar: 'خدمات التدريب والسلامة'
+	},
+	Option_Value_3:
+	{
+		en: 'Training and Safety Services',
+		ar: 'خدمات التدريب والسلامة'
+	},
 	Copyright:
 	{
-		en: '© 2023 United Expertise Company. All rights reserved.',
-		ar: 'جميع الحقوق محفوظة الخبرات المتحدة للاستشارات البيئية © 2023'
+		en: `© ${new Date ().getFullYear ()} United Expertise Company. All rights reserved.`,
+		ar: `${new Date ().getFullYear ()} © جميع الحقوق محفوظة الخبرات المتحدة للاستشارات البيئية`
 	},
 	Terms_of_Use:
 	{
@@ -243,7 +303,7 @@ const Toggle_Language = async () =>
 	const Language = document.documentElement.getAttribute ('lang');
 	const Text = [...document.getElementsByTagName ('p'), ...document.getElementsByTagName ('a'), ...document.getElementsByTagName ('span'), ... document.getElementsByTagName ('div'), ...document.getElementsByTagName ('input'), ...document.getElementsByTagName ('textarea'), ...document.getElementsByTagName ('label'), ...document.getElementsByTagName ('li')]
 	document.documentElement.setAttribute ('lang', Language === 'en' ? 'ar' : 'en');
-	Object.keys (International_Text).forEach (ID => document.getElementById (ID).placeholder === undefined ? document.getElementById (ID).innerHTML = International_Text [ID] [Language === 'en' ? 'ar' : 'en'] : document.getElementById (ID).placeholder = International_Text [ID] [Language === 'en' ? 'ar' : 'en']);
+	Object.keys (International_Text).forEach (ID => document.getElementById (ID).placeholder !== undefined ? document.getElementById (ID).placeholder = International_Text [ID] [Language === 'en' ? 'ar' : 'en'] : ((document.getElementById (ID).value !== undefined && document.getElementById (ID).value !== 0 && document.getElementById (ID).value !== '') ? document.getElementById (ID).value = International_Text [ID] [Language === 'en' ? 'ar' : 'en'] : document.getElementById (ID).innerHTML = International_Text [ID] [Language === 'en' ? 'ar' : 'en']));
 	if (Language === 'en')
 	{
 		document.getElementsByClassName ('Arabic_Language') [0].setAttribute ('style', '');
@@ -255,7 +315,12 @@ const Toggle_Language = async () =>
 			Input_Label_Element.classList.add ('Right_1rem');
 			Input_Label_Element.classList.remove ('Left_1rem');
 		});
+		document.querySelectorAll ('.Dropdown_Menu_Option').forEach (Dropdown_Menu_Element => Dropdown_Menu_Element.classList.add ('Arabic_Dropdown'));
+		document.querySelectorAll ('.Option_Label').forEach (Option_Element => Option_Element.classList.add ('Arabic_Dropdown'));
 		document.querySelectorAll ('.Input_Field').forEach (Input_Label_Element => Input_Label_Element.classList.add ('Arabic_Input'));
+		document.getElementsByClassName ('Dropdown_Menu_Label') [0].classList.add ('Arabic_Dropdown');
+		document.getElementsByClassName ('Dropdown_Menu_Box') [0].style = 'padding-top: 0.075rem !important; padding-bottom: 0.075rem !important;'
+		document.getElementsByClassName ('Blog_Cards') [0].classList.add ('Reverse_Flex_Row')
 	}
 	else if (Language === 'ar')
 	{
@@ -268,7 +333,12 @@ const Toggle_Language = async () =>
 			Input_Label_Element.classList.add ('Left_1rem')
 			Input_Label_Element.classList.remove ('Right_1rem')
 		});
+		document.querySelectorAll ('.Dropdown_Menu_Option').forEach (Dropdown_Menu_Element => Dropdown_Menu_Element.classList.remove ('Arabic_Dropdown'));
+		document.querySelectorAll ('.Option_Label').forEach (Option_Element => Option_Element.classList.remove ('Arabic_Dropdown'));
 		document.querySelectorAll ('.Input_Field').forEach (Input_Label_Element => Input_Label_Element.classList.remove ('Arabic_Input'));
+		document.getElementsByClassName ('Dropdown_Menu_Label') [0].classList.remove ('Arabic_Dropdown');
+		document.getElementsByClassName ('Dropdown_Menu_Box') [0].style = ''
+		document.getElementsByClassName ('Blog_Cards') [0].classList.remove ('Reverse_Flex_Row')
 	}
 	const Response = await fetch (`${window.location.origin}/wp-json/uec-theme/api/blogs?language=${Language === 'en' ? 'ar' : 'en'}`);
 	const Blogs_HTML = await Response.text ();
@@ -278,13 +348,13 @@ const Toggle_Language = async () =>
 
 const Scroll_to_Contact_Us_Section = () => 	window.scrollTo ({ top: document.getElementsByClassName ('Contact_Us_Section') [0].offsetTop, behavior: "smooth" });
 
-Array.from (document.getElementsByClassName ('Dropdown_Menu_Container')).forEach ((Element, Index) =>
+[...document.getElementsByClassName ('Dropdown_Menu_Container')].forEach ((Element, Index) =>
 {
 	Element.addEventListener ('click', Event =>
 	{
-		if (Event.target !== Element && document.getElementsByClassName ('Dropdown_Menu_Controller') [Index].value)
+		if (Event.target !== Element && document.getElementsByClassName ('Dropdown_Menu_Controller') [Index].checked)
 		{
-			document.getElementsByClassName ('Dropdown_Menu_Controller') [Index].value = false;
+			document.getElementsByClassName ('Dropdown_Menu_Controller') [Index].checked = false;
 		}
 	});
 });
